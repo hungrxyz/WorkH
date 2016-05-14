@@ -10,16 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var timeLabel: UILabel!
+	@IBOutlet weak var startPauseButton: UIButton!
+	var timer: NSTimer!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		Timekeeper.sharedInstance.delegate = self
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	@IBAction func startPauseTapped(sender: AnyObject) {
+		if Timekeeper.sharedInstance.active {
+			Timekeeper.sharedInstance.stopTimer()
+		} else {
+			Timekeeper.sharedInstance.startTimer()
+		}
 	}
+	
+}
 
-
+extension ViewController: TimekeeperDelegate {
+	func updateTimeLabel(text: String) {
+		timeLabel.text = text
+	}
 }
 

@@ -14,6 +14,7 @@
 		FAB1709D1CE7DC4B002BC337 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1709B1CE7DC4B002BC337 /* LaunchScreen.storyboard */; };
 		FAB170A81CE7DC4B002BC337 /* WorkHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170A71CE7DC4B002BC337 /* WorkHTests.swift */; };
 		FAB170B31CE7DC4B002BC337 /* WorkHUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170B21CE7DC4B002BC337 /* WorkHUITests.swift */; };
+		FAB170C11CE7DE5E002BC337 /* Timekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FAB170AE1CE7DC4B002BC337 /* WorkHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB170B21CE7DC4B002BC337 /* WorkHUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkHUITests.swift; sourceTree = "<group>"; };
 		FAB170B41CE7DC4B002BC337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timekeeper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				FAB170921CE7DC4B002BC337 /* AppDelegate.swift */,
 				FAB170941CE7DC4B002BC337 /* ViewController.swift */,
+				FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */,
 				FAB170961CE7DC4B002BC337 /* Main.storyboard */,
 				FAB170991CE7DC4B002BC337 /* Assets.xcassets */,
 				FAB1709B1CE7DC4B002BC337 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB170951CE7DC4B002BC337 /* ViewController.swift in Sources */,
+				FAB170C11CE7DE5E002BC337 /* Timekeeper.swift in Sources */,
 				FAB170931CE7DC4B002BC337 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
