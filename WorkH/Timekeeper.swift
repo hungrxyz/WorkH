@@ -43,7 +43,7 @@ class Timekeeper {
 		timer = nil
 		
 		if let delegate = delegate {
-			delegate.updateTimeLabel("00:00:00")
+			delegate.updateTimeLabel("- | -")
 		}
 		
 		RealmHandler.sharedInstance.updateSession(endDate)
@@ -70,6 +70,33 @@ class Timekeeper {
 	}
 	
 	func transformElapsedTime(elapsedTime: NSTimeInterval) -> String {
-		return String(format: "%0.2d:%0.2d:%0.2d", Int(elapsedTime / 3600), Int(elapsedTime / 60), Int(round(elapsedTime % 60)))
+		let calendar = NSCalendar.currentCalendar()
+		let units = calendar.components([.Second, .Minute, .Hour],
+		                                fromDate: NSDate(timeIntervalSinceReferenceDate: 0.0),
+		                                toDate: NSDate(timeIntervalSinceReferenceDate: elapsedTime),
+		                                options: [])
+		
+		if units.hour == 0 && units.minute == 0 {
+			switch units.second {
+			case 0...9:
+				return String(format: "%0.1d", units.second)
+			default:
+				return String(format: "%0.2d", units.second)
+			}
+		} else if units.hour == 0 {
+			switch units.minute {
+			case 0...9:
+				return String(format: "%0.1d:%0.2d", units.minute, units.second)
+			default:
+				return String(format: "%0.2d:%0.2d", units.minute, units.second)
+			}
+		} else {
+			switch units.hour {
+			case 0...9:
+				return String(format: "%0.1d:%0.2d:%0.2d", units.hour, units.minute, units.second)
+			default:
+				return String(format: "%0.2d:%0.2d:%0.2d", units.hour, units.minute, units.second)
+			}
+		}
 	}
 }
