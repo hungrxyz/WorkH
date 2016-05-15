@@ -30,6 +30,8 @@ class RealmHandler {
 		} catch {
 			print(error)
 		}
+		
+		CKHandler.sharedInstance.newSession(session)
 	}
 	
 	func updateSession(endDate: NSDate) {
@@ -44,6 +46,8 @@ class RealmHandler {
 			} catch {
 				print(error)
 			}
+			
+			CKHandler.sharedInstance.updateSession(activeSession)
 		}
 	}
 	
@@ -51,8 +55,6 @@ class RealmHandler {
 		let sessions = realm.objects(Session.self).filter("endDate == nil")
 		if let session = sessions.first {
 			activeSession = session
-			
-			print(session.startDate)
 			
 			Timekeeper.sharedInstance.startDate = session.startDate
 			Timekeeper.sharedInstance.startTimer()
@@ -70,6 +72,4 @@ class RealmHandler {
 			Timekeeper.sharedInstance.calculateTotalTime(Array(todaysSessions))
 		}
 	}
-	
-	
 }

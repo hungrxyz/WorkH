@@ -20,6 +20,8 @@
 		FAB170C11CE7DE5E002BC337 /* Timekeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */; };
 		FAB170C51CE88154002BC337 /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170C41CE88154002BC337 /* RealmHandler.swift */; };
 		FAB170C71CE88265002BC337 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170C61CE88265002BC337 /* Session.swift */; };
+		FAB170CB1CE8C7B8002BC337 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB170CA1CE8C7B8002BC337 /* CloudKit.framework */; };
+		FAB170CD1CE8C7D3002BC337 /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB170CC1CE8C7D3002BC337 /* CloudKitHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timekeeper.swift; sourceTree = "<group>"; };
 		FAB170C41CE88154002BC337 /* RealmHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHandler.swift; sourceTree = "<group>"; };
 		FAB170C61CE88265002BC337 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FAB170C91CE8C7B4002BC337 /* WorkH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WorkH.entitlements; sourceTree = "<group>"; };
+		FAB170CA1CE8C7B8002BC337 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FAB170CC1CE8C7D3002BC337 /* CloudKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D51C79D2E0A2EE12D3264E7 /* Pods_WorkH.framework in Frameworks */,
+				FAB170CB1CE8C7B8002BC337 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 		04586A8A08A6D5A8147A70C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAB170CA1CE8C7B8002BC337 /* CloudKit.framework */,
 				BDC53EE19E3075D732CE8814 /* Pods_WorkH.framework */,
 				322ADC487E4CC65674C3E71C /* Pods_WorkHTests.framework */,
 				A6400CB7BA3F98426EF747FC /* Pods_WorkHUITests.framework */,
@@ -143,14 +150,12 @@
 		FAB170911CE7DC4B002BC337 /* WorkH */ = {
 			isa = PBXGroup;
 			children = (
-				FAB170921CE7DC4B002BC337 /* AppDelegate.swift */,
 				FAB170C81CE893E0002BC337 /* View Controllers */,
 				FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */,
-				FAB170C41CE88154002BC337 /* RealmHandler.swift */,
-				FAB170C61CE88265002BC337 /* Session.swift */,
-				FAB170991CE7DC4B002BC337 /* Assets.xcassets */,
-				FAB1709B1CE7DC4B002BC337 /* LaunchScreen.storyboard */,
-				FAB1709E1CE7DC4B002BC337 /* Info.plist */,
+				FAB170D11CE8C85C002BC337 /* Realm */,
+				FAB170CF1CE8C83F002BC337 /* Cloud Kit */,
+				FAB170D01CE8C848002BC337 /* Data Model */,
+				FAB170CE1CE8C82C002BC337 /* Infrasturcture */,
 			);
 			path = WorkH;
 			sourceTree = "<group>";
@@ -180,6 +185,42 @@
 				FAB170961CE7DC4B002BC337 /* Main.storyboard */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FAB170CE1CE8C82C002BC337 /* Infrasturcture */ = {
+			isa = PBXGroup;
+			children = (
+				FAB170C91CE8C7B4002BC337 /* WorkH.entitlements */,
+				FAB170921CE7DC4B002BC337 /* AppDelegate.swift */,
+				FAB170991CE7DC4B002BC337 /* Assets.xcassets */,
+				FAB1709B1CE7DC4B002BC337 /* LaunchScreen.storyboard */,
+				FAB1709E1CE7DC4B002BC337 /* Info.plist */,
+			);
+			name = Infrasturcture;
+			sourceTree = "<group>";
+		};
+		FAB170CF1CE8C83F002BC337 /* Cloud Kit */ = {
+			isa = PBXGroup;
+			children = (
+				FAB170CC1CE8C7D3002BC337 /* CloudKitHandler.swift */,
+			);
+			name = "Cloud Kit";
+			sourceTree = "<group>";
+		};
+		FAB170D01CE8C848002BC337 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAB170C61CE88265002BC337 /* Session.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		FAB170D11CE8C85C002BC337 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FAB170C41CE88154002BC337 /* RealmHandler.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +299,12 @@
 				TargetAttributes = {
 					FAB1708E1CE7DC4B002BC337 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 96HG6E2WJ6;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					FAB170A21CE7DC4B002BC337 = {
 						CreatedOnToolsVersion = 7.3;
@@ -447,6 +494,7 @@
 				FAB170C71CE88265002BC337 /* Session.swift in Sources */,
 				FAB170C51CE88154002BC337 /* RealmHandler.swift in Sources */,
 				FAB170951CE7DC4B002BC337 /* ViewController.swift in Sources */,
+				FAB170CD1CE8C7D3002BC337 /* CloudKitHandler.swift in Sources */,
 				FAB170C11CE7DE5E002BC337 /* Timekeeper.swift in Sources */,
 				FAB170931CE7DC4B002BC337 /* AppDelegate.swift in Sources */,
 			);
@@ -591,6 +639,7 @@
 			baseConfigurationReference = 38296DB57C7D38420AFA2D3E /* Pods-WorkH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WorkH/WorkH.entitlements;
 				INFOPLIST_FILE = WorkH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzzel.WorkH;
@@ -603,6 +652,7 @@
 			baseConfigurationReference = B0026C7B9EE5DA07A3626092 /* Pods-WorkH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WorkH/WorkH.entitlements;
 				INFOPLIST_FILE = WorkH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzzel.WorkH;
