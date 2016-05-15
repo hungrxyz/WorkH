@@ -19,6 +19,8 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		setButtonImage()
+		
 		Timekeeper.sharedInstance.delegate = self
 		RealmHandler.sharedInstance.fetchTodaysSessions()
 	}
@@ -26,13 +28,24 @@ class ViewController: UIViewController {
 	@IBAction func startPauseTapped(sender: AnyObject) {
 		if Timekeeper.sharedInstance.active {
 			Timekeeper.sharedInstance.stopTimer()
-			startPauseButton.setImage(UIImage(named: "start_button"), forState: .Normal)
+			setButtonImage()
 		} else {
 			Timekeeper.sharedInstance.startTimer()
-			startPauseButton.setImage(UIImage(named: "stop_button"), forState: .Normal)
+			setButtonImage()
 		}
 	}
 	
+	func setButtonImage() {
+		if Timekeeper.sharedInstance.active {
+			startPauseButton.setImage(UIImage(named: "stop_button"), forState: .Normal)
+		} else {
+			startPauseButton.setImage(UIImage(named: "start_button"), forState: .Normal)
+		}
+	}
+	
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return .LightContent
+	}
 }
 
 extension ViewController: TimekeeperDelegate {
