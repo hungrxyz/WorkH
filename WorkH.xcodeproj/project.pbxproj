@@ -148,7 +148,6 @@
 				FAB170C01CE7DE5E002BC337 /* Timekeeper.swift */,
 				FAB170C41CE88154002BC337 /* RealmHandler.swift */,
 				FAB170C61CE88265002BC337 /* Session.swift */,
-				FAB170961CE7DC4B002BC337 /* Main.storyboard */,
 				FAB170991CE7DC4B002BC337 /* Assets.xcassets */,
 				FAB1709B1CE7DC4B002BC337 /* LaunchScreen.storyboard */,
 				FAB1709E1CE7DC4B002BC337 /* Info.plist */,
@@ -178,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB170941CE7DC4B002BC337 /* ViewController.swift */,
+				FAB170961CE7DC4B002BC337 /* Main.storyboard */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

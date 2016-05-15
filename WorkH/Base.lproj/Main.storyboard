@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-Ed-690">
-                                <rect key="frame" x="124" y="68" width="72.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-Ed-690">
+                                <rect key="frame" x="112.5" y="131" width="95" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,23 +31,32 @@
                                     <action selector="startPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAa-rA-wHg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-Wc-0PW">
+                                <rect key="frame" x="131" y="52" width="58.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mcf-Ed-690" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1os-jI-ZLw"/>
                             <constraint firstItem="C5F-pE-ekz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Ky-iy-Hah"/>
+                            <constraint firstItem="Pm8-Wc-0PW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="FYY-b0-ZfC"/>
+                            <constraint firstItem="Mcf-Ed-690" firstAttribute="top" secondItem="Pm8-Wc-0PW" secondAttribute="bottom" constant="43" id="I5Y-Dw-pZs"/>
                             <constraint firstItem="C5F-pE-ekz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iq4-sk-TZo"/>
-                            <constraint firstItem="Mcf-Ed-690" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="dKo-k5-6fT"/>
+                            <constraint firstItem="Pm8-Wc-0PW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4K-DX-vrT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="startPauseButton" destination="C5F-pE-ekz" id="jN9-8y-KwV"/>
                         <outlet property="timeLabel" destination="Mcf-Ed-690" id="h6J-ju-rH7"/>
+                        <outlet property="totalTimeTodayLabel" destination="Pm8-Wc-0PW" id="2PW-bP-bLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173.33333333333334" y="378.19333333333333"/>
+            <point key="canvasLocation" x="301" y="353"/>
         </scene>
     </scenes>
 </document>

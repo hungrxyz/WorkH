@@ -10,6 +10,7 @@ import Foundation
 
 protocol TimekeeperDelegate {
 	func updateTimeLabel(text: String)
+	func updateTotalTimeLabel(text: String)
 }
 
 class Timekeeper {
@@ -40,6 +41,10 @@ class Timekeeper {
 		timer.invalidate()
 		timer = nil
 		
+		if let delegate = delegate {
+			delegate.updateTimeLabel("00:00:00")
+		}
+		
 		RealmHandler.sharedInstance.updateSession(endDate)
 	}
 	
@@ -47,7 +52,23 @@ class Timekeeper {
 		let elapsedTime = -startDate.timeIntervalSinceNow
 		
 		if let delegate = delegate {
-			delegate.updateTimeLabel(String(format: "%0.2d:%0.2d:%0.2d", Int(elapsedTime / 3600), Int(elapsedTime / 60), Int(round(elapsedTime % 60))))
+			delegate.updateTimeLabel(transformElapsedTime(elapsedTime))
 		}
+	}
+	
+	func calculateTotalTime(sessions: [Session]) {
+		var totalElapsedTime: NSTimeInterval = 0.0
+		
+		for session in sessions {
+			totalElapsedTime += -session.startDate.timeIntervalSinceDate(session.endDate!)
+		}
+		
+		if let delegate = delegate {
+			delegate.updateTotalTimeLabel(transformElapsedTime(totalElapsedTime))
+		}
+	}
+	
+	func transformElapsedTime(elapsedTime: NSTimeInterval) -> String {
+		return String(format: "%0.2d:%0.2d:%0.2d", Int(elapsedTime / 3600), Int(elapsedTime / 60), Int(round(elapsedTime % 60)))
 	}
 }

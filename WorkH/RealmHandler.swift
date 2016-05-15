@@ -38,6 +38,8 @@ class RealmHandler {
 				try realm.write {
 					activeSession.endDate = endDate
 					realm.add(activeSession, update: true)
+					
+					fetchTodaysSessions()
 				}
 			} catch {
 				print(error)
@@ -52,6 +54,18 @@ class RealmHandler {
 			
 			Timekeeper.sharedInstance.startDate = session.startDate
 			Timekeeper.sharedInstance.startTimer()
+		}
+	}
+	
+	func fetchTodaysSessions() {
+		let calendar = NSCalendar.currentCalendar()
+		let today = calendar.dateByAddingUnit(.Hour, value: -5, toDate: NSDate(), options: [])
+		let todayStartOfDay = calendar.startOfDayForDate(today!)
+		let today5AM = calendar.dateByAddingUnit(.Hour, value: 5, toDate: todayStartOfDay, options: [])
+		
+		let todaysSessions = realm.objects(Session.self).filter("startDate > %@ && endDate != nil", today5AM!)
+		if !todaysSessions.isEmpty {
+			Timekeeper.sharedInstance.calculateTotalTime(Array(todaysSessions))
 		}
 	}
 	
