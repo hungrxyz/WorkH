@@ -17,6 +17,7 @@ class Timekeeper {
 	static let sharedInstance = Timekeeper()
 	
 	var delegate: TimekeeperDelegate?
+	
 	var timer: NSTimer!
 	var startDate: NSDate!
 	var active: Bool {
@@ -25,13 +26,21 @@ class Timekeeper {
 	
 	func startTimer() {
 		timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(calculateElapsedTime), userInfo: nil, repeats: true)
-		startDate = NSDate()
 		
+		if startDate == nil {
+			startDate = NSDate()
+			
+			RealmHandler.sharedInstance.newSession(startDate)
+		}
 	}
 	
 	func stopTimer() {
+		let endDate = NSDate()
+		
 		timer.invalidate()
 		timer = nil
+		
+		RealmHandler.sharedInstance.updateSession(endDate)
 	}
 	
 	@objc func calculateElapsedTime() {
