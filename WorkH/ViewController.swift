@@ -26,10 +26,10 @@ class ViewController: UIViewController {
 	@IBAction func startPauseTapped(sender: AnyObject) {
 		if Timekeeper.sharedInstance.active {
 			Timekeeper.sharedInstance.stopTimer()
-			startPauseButton.setTitle("Stop", forState: .Normal)
+			startPauseButton.setImage(UIImage(named: "start_button"), forState: .Normal)
 		} else {
 			Timekeeper.sharedInstance.startTimer()
-			startPauseButton.setTitle("Start", forState: .Normal)
+			startPauseButton.setImage(UIImage(named: "stop_button"), forState: .Normal)
 		}
 	}
 	

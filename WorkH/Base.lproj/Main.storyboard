@@ -17,35 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-Ed-690">
-                                <rect key="frame" x="112.5" y="131" width="95" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-Ed-690">
+                                <rect key="frame" x="79" y="204" width="161" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5F-pE-ekz">
-                                <rect key="frame" x="128" y="260" width="64" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5F-pE-ekz">
+                                <rect key="frame" x="60" y="284" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="NUg-GL-VUs"/>
+                                    <constraint firstAttribute="width" constant="200" id="k4d-8R-HDz"/>
+                                </constraints>
+                                <state key="normal" image="start_button"/>
                                 <connections>
                                     <action selector="startPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAa-rA-wHg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-Wc-0PW">
-                                <rect key="frame" x="131" y="52" width="58.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-SF-ZHu">
+                                <rect key="frame" x="121" y="166" width="78" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-xv-Nic">
+                                <rect key="frame" x="104" y="60" width="111" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-Wc-0PW">
+                                <rect key="frame" x="79" y="98" width="161" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mcf-Ed-690" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1os-jI-ZLw"/>
-                            <constraint firstItem="C5F-pE-ekz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Ky-iy-Hah"/>
-                            <constraint firstItem="Pm8-Wc-0PW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="FYY-b0-ZfC"/>
-                            <constraint firstItem="Mcf-Ed-690" firstAttribute="top" secondItem="Pm8-Wc-0PW" secondAttribute="bottom" constant="43" id="I5Y-Dw-pZs"/>
+                            <constraint firstItem="Pm8-Wc-0PW" firstAttribute="top" secondItem="jCS-xv-Nic" secondAttribute="bottom" constant="8" id="6J7-RP-YnK"/>
                             <constraint firstItem="C5F-pE-ekz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iq4-sk-TZo"/>
                             <constraint firstItem="Pm8-Wc-0PW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4K-DX-vrT"/>
+                            <constraint firstItem="dnq-SF-ZHu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NoA-gd-fz3"/>
+                            <constraint firstItem="dnq-SF-ZHu" firstAttribute="top" secondItem="Pm8-Wc-0PW" secondAttribute="bottom" constant="20" id="UE1-pW-0cp"/>
+                            <constraint firstItem="Mcf-Ed-690" firstAttribute="top" secondItem="dnq-SF-ZHu" secondAttribute="bottom" constant="8" id="ilE-yj-xex"/>
+                            <constraint firstItem="jCS-xv-Nic" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="log-i7-hCf"/>
+                            <constraint firstItem="jCS-xv-Nic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mZF-Is-tpB"/>
+                            <constraint firstItem="C5F-pE-ekz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="y5N-5A-QEI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,4 +78,7 @@
             <point key="canvasLocation" x="301" y="353"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="start_button" width="191" height="191"/>
+    </resources>
 </document>
