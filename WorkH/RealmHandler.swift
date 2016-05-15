@@ -52,6 +52,8 @@ class RealmHandler {
 		if let session = sessions.first {
 			activeSession = session
 			
+			print(session.startDate)
+			
 			Timekeeper.sharedInstance.startDate = session.startDate
 			Timekeeper.sharedInstance.startTimer()
 		}

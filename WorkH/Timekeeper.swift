@@ -37,6 +37,7 @@ class Timekeeper {
 	
 	func stopTimer() {
 		let endDate = NSDate()
+		startDate = nil
 		
 		timer.invalidate()
 		timer = nil
